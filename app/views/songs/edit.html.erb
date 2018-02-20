@@ -1,2 +1,8 @@
 <h1>Editing <%= @song.title %></h1>
+
+
+<%= form_for :song do |f| %>
+  <%= f.label :artist_name %><br>
+  <%= f.collection_select :artist_id, Artist.all, :id, :name %>
+<% end %><br>
 <%= render partial: "form" %>
